@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(223, 190, 223);
+    background-image: url("su1.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Container Styles */
+.register-container {
+    width: 400px;
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Top Section Styles */
+.top {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.top span {
+    font-size: 14px;
+    color: #888888;
+}
+
+.top a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+header {
+    font-size: 24px;
+    color: #333333;
+    margin-top: 10px;
+}
+
+/* Input Box Styles */
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 380px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dddddd;
+    border-radius: 25px; /* Updated border-radius here */
+    margin-top: 5px;
+}
+
+.bx {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #555555;
+}
+
+/* Submit Button Styles */
+.submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: rgb(210, 120, 210);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.submit:hover {
+    background-color: rgb(179, 37, 179); /* Change the color to your desired hover color */
+}
+/* Two Columns Styles */
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-right: -110px;
+}
+
+.one, .two {
+    flex: 1;
+}
+
+/* Checkbox Styles */
+#register-check {
+    margin-right: 5px;
+}
+
+/* Hyperlink Styles */
+label a {
+    color: #3498db;
+    text-decoration: none;
+}

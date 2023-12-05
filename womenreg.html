@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="womenreg.css">
+    <title>Registration Form</title>
+
+    <script>
+        function validateForm() {
+            var scheme_name = document.forms["registrationForm"]["scheme_name"].value;
+            var field_1 = document.forms["registrationForm"]["field_1"].value;
+            var field_2 = document.forms["registrationForm"]["field_2"].value;
+            var field_3 = document.forms["registrationForm"]["field_3"].value;
+            var field_4 = document.forms["registrationForm"]["field_4"].value;
+            var field_5 = document.forms["registrationForm"]["field_5"].value;
+            var field_6 = document.forms["registrationForm"]["field_6"].value;
+            var ageProof = document.forms["registrationForm"]["age_proof"].value;
+
+            if (scheme_name == "" || field_1 == "" || field_2 == "" || field_3 == "" || field_4 == "" || field_5.value == "" || field_6 == "" || ageProof.value == "") {
+                alert("Please fill in all required fields.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="logo">
+        <img src="logoblack.png" alt="Caring Bridges Logo" style="height: 45px; width: auto;">
+    </div>
+    <form method="POST" action="womenreg.php" autocomplete="off" enctype="multipart/form-data" onsubmit="return validateForm()" >
+        <h2>Registration Form</h2>
+
+        <label>
+            <select name="scheme_name" required autocomplete="new-password">
+                <option value="" disabled selected>Select Scheme</option>
+                <option value="Stree Shakthi">Stree Shakthi</option>
+                <option value="Shanthwana">Shanthwana</option>
+                <option value="Swayam Siddha">Swayam Siddha</option>
+                <option value="Mahila Udyam Nidhi">Mahila Udyam Nidhi</option>
+                <option value="Bhagyalakshmi">Bhagyalakshmi</option>
+                <option value="Dena Shakti">Dena Shakti</option>
+            </select>
+            <i class="bx bxs-calendar-event"></i>
+        </label>
+
+        <label>
+            <input type="text" name="field_1" placeholder="Name" required autocomplete="new-password">
+            <i class="bx bxs-user"></i>
+        </label>
+
+        <label>
+            <input type="number" name="field_2" placeholder="Age" required autocomplete="new-password">
+            <i class="bx bxs-calendar"></i>
+        </label>
+
+        <label>
+            <input type="file" name="age_proof" id="ageProof" accept=".jpg, .jpeg, .png" placeholder="Upload Age Proof Document" readonly>
+            <i class="bx bxs-image"></i>
+        </label>
+
+        <label>
+            <input type="text" name="field_3" placeholder="District" required autocomplete="new-password">
+            <i class="bx bxs-map"></i>
+        </label>
+
+        <label>
+            <input type="text" name="field_4" placeholder="Taluk" required autocomplete="new-password">
+            <i class="bx bxs-building"></i>
+        </label>
+
+        <label>
+            <input type="tel" name="field_5" placeholder="Phone number" pattern="[0-9]{10}" required autocomplete="new-password">
+            <i class="bx bxs-phone"></i>
+        </label>
+
+        <label>
+            <select name="field_6" required autocomplete="new-password" id="maritalStatusSelect" onchange="toggleFileInput()">
+                <option value="" disabled selected>Select Marital Status</option>
+                <option value="married">Married</option>
+                <option value="unmarried">Unmarried</option>
+            </select>
+            <i class="bx bxs-heart"></i>
+        </label>
+
+        <label id="fileInputLabel" style="display:none;">
+            <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" placeholder="Upload Marriage Certificate" readonly>
+            <i class="bx bxs-image"></i>
+        </label>
+
+        <input type="submit" id="submit" name="submit" value="Register">
+    </form>
+
+    <script>
+         function toggleFileInput() {
+            var maritalStatus = document.getElementById("maritalStatusSelect").value;
+            var fileInput = document.getElementById("image");
+            var ageProofLabel = document.getElementById("ageProofLabel");
+            var fileInputLabel = document.getElementById("fileInputLabel");
+
+            if (maritalStatus === "married") {
+                fileInput.disabled = false;
+                fileInputLabel.style.display = "block";
+            } else {
+                fileInput.disabled = true;
+                fileInputLabel.style.display = "none";
+            }
+        }
+
+        // Initial check to set the initial visibility based on the default value
+        toggleFileInput();
+    </script>
+
+</body>
+</html>
